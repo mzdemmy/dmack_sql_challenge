@@ -1,0 +1,43 @@
+Employees
+-
+emp_no SERIAL PK
+birth_date DATE
+first_name VARCHAR
+last_name VARCHAR
+hire_date DATE 
+
+Departments
+-
+dept_no VARCHAR PK
+dept_name VARCHAR
+
+Dept_Manager
+-
+dept_no VARCHAR PK FK >- Departments.dept_no
+empl_no INT PK FK >- Employees.empl_no
+from_date DATE PK
+to_date DATE
+
+
+Dept_Emp
+-
+empl_no INT PK FK >- Employees.empl_no
+dept_no VARCHAR PK FK >- Departments.dept_no
+from_date DATE PK
+to_date DATE
+
+
+Salaries
+-
+empl_no INT FK >- Employees.empl_no
+salary INT PK
+from_date DATE PK
+to_date DATE
+
+
+Titles
+-
+empl_no INT PK FK >- Employees.empl_no
+title VARCHAR PK
+from_date DATE PK
+to_date DATE
